@@ -1,0 +1,20 @@
+{
+  "name": "salus-chatbot",
+  "version": "1.0.0",
+  "description": "A customizable chat widget for websites",
+  "main": "chatbot.js",
+  "scripts": {
+    "minify": "terser chatbot.js -c -m -o dist/chatbot.min.js",
+    "build": "npm run minify"
+  },
+  "keywords": [
+    "chatbot",
+    "widget",
+    "chat"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "terser": "^5.29.2"
+  }
+} 

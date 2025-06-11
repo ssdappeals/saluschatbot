@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salus Chatbot Test</title>
+    <!-- Include marked.js for markdown support -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .content {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Salus Chatbot Test Page</h1>
+    
+    <div class="content">
+        <h2>About This Page</h2>
+        <p>This is a test page to demonstrate the Salus Chatbot widget. You should see a chat button in the bottom right corner of this page.</p>
+        <p>Click the chat button to start a conversation with the chatbot.</p>
+    </div>
+
+    <!-- Load minified chatbot script at the end of body -->
+    <script src="https://cdn.jsdelivr.net/gh/btackney/chatbottest/dist/chatbot.min.js"></script>
+    <script>
+        // Wait for both the document and the chatbot script to be ready
+        window.addEventListener('load', function() {
+            // Check if initSalusChat is available
+            if (typeof initSalusChat === 'function') {
+                // Initialize the chatbot with custom configuration
+                initSalusChat({
+                    title: "Salus Support",
+                    welcomeMessage: "Hello! I'm your test chatbot. How can I help you today?",
+                    primaryColor: "#f56447",
+                    secondaryColor: "#E4AE20"
+                });
+            } else {
+                console.error('Chatbot initialization function not found. Please check if the script loaded correctly.');
+            }
+        });
+    </script>
+</body>
+</html> 
