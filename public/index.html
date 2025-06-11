@@ -6,20 +6,26 @@
     <title>Salus Chatbot Example</title>
     <!-- Include marked.js for markdown support -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- Include the chatbot widget -->
-    <script src="chatbot.js"></script>
+
 </head>
 <body>
     <h1>Welcome to the Example Page</h1>
     <p>This page demonstrates how to use the Salus Chatbot widget.</p>
 
+    <script src="https://cdn.jsdelivr.net/gh/ssdappeals/saluschatbot@main/dist/chatbot.min.js"></script>
     <script>
-        // Initialize the chatbot with custom configuration
-        initSalusChat({
-            title: 'Salus Disability',
-            welcomeMessage: 'Hi There! Would you like a free Social Security consultation?',
-            primaryColor: '#f56447',
-            secondaryColor: '#E4AE20'
+        // Wait for both the document and the chatbot script to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a small delay to ensure the script is fully loaded
+            setTimeout(function() {
+                // Initialize the chatbot with custom configuration
+                window.initSalusChat({
+                    title: "Salus Support",
+                    welcomeMessage: "Hello! I'm your test chatbot. How can I help you today?",
+                    primaryColor: "#f56447",
+                    secondaryColor: "#E4AE20"
+                });
+            }, 100); // 100ms delay to ensure script is loaded
         });
     </script>
 </body>
