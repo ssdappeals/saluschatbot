@@ -1,7 +1,7 @@
 (function () {
   // Default configuration
   const defaultConfig = {
-    webhookUrl: 'http://localhost:5678/webhook/d931c4a7-02f5-4359-918f-7ad3fae7b144/chat',
+    webhookUrl: 'https://acrd.app.n8n.cloud/webhook/d931c4a7-02f5-4359-918f-7ad3fae7b144/chat',
     title: 'Salus Disability',
     welcomeMessage: 'Hi There! Would you like a free Social Security consultation?',
     position: 'bottom-right',
