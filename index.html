@@ -227,7 +227,7 @@
   const sessionId = crypto.randomUUID();
   sessionStorage.setItem('chatbot_session_id', sessionId);
 
-  const webhookUrl = 'http://localhost:5678/webhook/d931c4a7-02f5-4359-918f-7ad3fae7b144/chat';
+  const webhookUrl = 'https://acrd.app.n8n.cloud/webhook/d931c4a7-02f5-4359-918f-7ad3fae7b144/chat';
 
   const launcher = document.getElementById('chat-launcher');
   const chatWindow = document.getElementById('chat-window');
@@ -359,6 +359,14 @@
   sendBtn.onclick = sendMessage;
   inputField.addEventListener('keydown', e => {
     if (e.key === 'Enter') sendMessage();
+  });
+
+  initSalusChat({
+    webhookUrl: 'https://acrd.app.n8n.cloud/webhook/d931c4a7-02f5-4359-918f-7ad3fae7b144/chat',
+    title: 'Salus Disability',
+    welcomeMessage: 'Hi There! Would you like a free Social Security consultation?',
+    primaryColor: '#f56447',
+    secondaryColor: '#E4AE20'
   });
 </script>
 
