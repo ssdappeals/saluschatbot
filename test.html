@@ -36,22 +36,27 @@
     </div>
 
     <!-- Load minified chatbot script at the end of body -->
-    <script src="https://cdn.jsdelivr.net/gh/btackney/chatbottest/dist/chatbot.min.js"></script>
+    <script>
+        // Define the initialization function before loading the script
+        window.initSalusChat = function(config) {
+            // The actual initialization will be handled by the script
+            console.log('Initializing chatbot with config:', config);
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/ssdappeals/saluschatbot@main/dist/chatbot.min.js"></script>
     <script>
         // Wait for both the document and the chatbot script to be ready
-        window.addEventListener('load', function() {
-            // Check if initSalusChat is available
-            if (typeof initSalusChat === 'function') {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add a small delay to ensure the script is fully loaded
+            setTimeout(function() {
                 // Initialize the chatbot with custom configuration
-                initSalusChat({
+                window.initSalusChat({
                     title: "Salus Support",
                     welcomeMessage: "Hello! I'm your test chatbot. How can I help you today?",
                     primaryColor: "#f56447",
                     secondaryColor: "#E4AE20"
                 });
-            } else {
-                console.error('Chatbot initialization function not found. Please check if the script loaded correctly.');
-            }
+            }, 100); // 100ms delay to ensure script is loaded
         });
     </script>
 </body>
